@@ -1,39 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author tupux
- */
+import java.util.Scanner;
+import java.util.ArrayList;        
 public class Administrador {
-    private String Nombre ;
-    private String Credencial ;
-    private  int Contraseña;
-
-    public String getNombre() {
-        return Nombre;
+    private final String Nombre ;
+    private final String Credencial ;
+    private final  int Contrasena;
+    private final String catalogo[];
+    Scanner sc= new Scanner (System.in);
+    public Administrador (String nombre, String credencial , int contrasena, String[] catalogo){
+        this.Contrasena=contrasena;
+        this.Credencial=credencial;
+        this.Nombre=nombre;
+        this.catalogo=catalogo;
     }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public String getCredencial() {
-        return Credencial;
-    }
-
-    public void setCredencial(String Credencial) {
-        this.Credencial = Credencial;
-    }
-
-    public int getContraseña() {
-        return Contraseña;
-    }
-
-    public void setContraseña(int Contraseña) {
-        this.Contraseña = Contraseña;
+    public void Datos(String Nombre ,String Credencial,int Contrasena ){
+        System.out.println("Ingrese su Nombre: " );
+        Nombre=sc.nextLine();
+        System.out.println("Ingrese su Credencial: ");
+        Credencial=sc.nextLine();
+        System.out.println("Ingrese la Contraseña: ");
+        Contrasena=sc.nextInt();         
     }
     
+    public void catalog(String [] catalogo){
+       String producto;
+       int precio; 
+       ArrayList<String> Productos = new ArrayList<>();
+       ArrayList<Integer> Precios = new ArrayList<>();
+       System.out.println("Ingrese el producto");
+       producto=sc.nextLine();
+       Productos.add(producto);
+       System.out.println("ingrese el precio");
+       precio=sc.nextInt();
+       Precios.add(precio);
+    }
+
 }
